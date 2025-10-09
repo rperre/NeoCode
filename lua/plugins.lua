@@ -1,35 +1,3 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-    if vim.v.shell_error ~= 0 then
-        vim.api.nvim_echo({
-            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out,                            "WarningMsg" },
-            { "\nPress any key to exit..." },
-        }, true, {})
-        vim.fn.getchar()
-        os.exit(1)
-    end
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Setup lazy.nvim
-require("lazy").setup({
-    spec = {
-        -- import your plugins
-        { import = "custom.plugins" },
-        { import = "custom.plugins.lsp" },
-    },
-    checker = { enabled = true },
-})
-
 -- Setup NeoTree
 require("neo-tree").setup {
     close_if_last_window = false,
@@ -198,41 +166,17 @@ require("neo-tree").setup {
     },
 }
 
--- require('telescope').load_extension('fzy_native')
--- the loading is important
-require('telescope').setup {
+-- Setup Telescope
+require('telescope').load_extension('fzf')
+--
+local keymap = vim.keymap
 
-    -- defaults = {
-    --     path_display = { "truncate " },
-    --     mappings = {
-    --         i = {
-    --             ["<C-k>"] = actions.move_selection_previous,
-    --             ["<C-j>"] = actions.move_selection_next,
-    --             ["<C-q>"] = actions.send_selected_to_qflist + actions
-    --                 .open_qflist,
-    --         },
-    --     },
-    -- },
-
-    pickers = {
-        colorscheme = {
-            enable_preview = true
-        }
-    }
-    --     extensions = {
-    --         fzf = {
-    --             fuzzy = true,             -- false will only do exact matching
-    --             override_generic_sorter = true, -- override the generic sorter
-    --             override_file_sorter = true, -- override the file sorter
-    --             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-    --             -- the default case_mode is "smart_case"
-    --         }
-    --     }
-}
--- To get fzf loaded and working with telescope, you need to call
-
--- load_extension, somewhere after setup function:
--- require('telescope').load_extension('fzf')
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>",
+    { desc = "Fuzz find files in cwd" })
+keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>",
+    { desc = "Find string under cursor in cwd" })
 
 -- Setup Bufferline
 require("bufferline").setup {}
