@@ -1,0 +1,5 @@
+.idea
+.ruby-lsp
+lazy-lock.json
+assets/.DS_Store
+.DS_Store
