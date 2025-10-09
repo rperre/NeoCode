@@ -1,0 +1,2 @@
+# NeoCode
+A NeoVim distribution
