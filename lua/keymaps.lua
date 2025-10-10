@@ -54,6 +54,7 @@ require("which-key").add({
             require("which-key").show({ global = false })
         end,
         desc = "Buffer Local Keymaps (which-key)",
+        mode = "n"
     },
     -- Window Mode
     {
@@ -61,9 +62,20 @@ require("which-key").add({
         function()
             require("which-key").show({ keys = "<c-w>", loop = true })
         end,
-        desc = "Window Hydra Mode (which-key)",
+        desc = "Wimndow Hydra Mode (which-key)",
+        mode = "n",
+    },
+    {
+        "<leader>f",
+        desc = "Find",
     },
     -- Format current buffer
+    {
+        "<space>fe",
+        "<cmd>Telescope<cr>",
+        desc = "Telescope",
+        mode = "n",
+    },
     {
         "<leader>cf",
         function()
