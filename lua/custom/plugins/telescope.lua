@@ -3,17 +3,16 @@ return {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
         dependencies = {
-            -- { 'vijaymarupudi/nvim-fzf' },
+            { 'vijaymarupudi/nvim-fzf' },
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-            -- { 'vijaymarupudi/nvim-fzf-commands' },
             { 'nvim-lua/plenary.nvim' },
         },
         config = function()
-            -- local telescope = require("telescope")
+            local telescope = require("telescope")
             -- local actions = require("telescope.actions")
 
 
-            -- telescope.load_extension("fzf")
+            telescope.load_extension("fzf")
 
             -- local keymap = vim.keymap
             --
