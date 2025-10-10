@@ -51,7 +51,7 @@ local function au(typ, pattern, cmdOrFn)
 end
 
 vim.diagnostic.open_float(nil, {
-    scope = "line",   -- Show diagnostics for the current line
+    scope = "line",     -- Show diagnostics for the current line
     border = "rounded", -- Add a rounded border to the floating window
 })
 
