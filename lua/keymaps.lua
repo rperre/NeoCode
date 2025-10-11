@@ -1,3 +1,6 @@
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+vim.o.cmdheight = 0
+
 local opts = {
     noremap = true, -- non-recursive
     silent = true,  -- do not show message
