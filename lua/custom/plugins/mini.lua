@@ -11,8 +11,13 @@ return {
             require('mini.extra').setup()
             require('mini.files').setup()
             require('mini.indentscope').setup()
-            -- require('mini.visits').setup()
-            --
+            require('mini.git').setup()
+            require('mini.diff').setup()
+            require('mini.statusline').setup()
+            require('mini.tabline').setup()
+
+            require('mini.hues').setup({ background = '#000000', foreground = '#cdc4c6' })
+            -- require('mini.colors').get_colorscheme():add_transparency():write({ name = 'NeoCode' })
         end,
     },
 }
