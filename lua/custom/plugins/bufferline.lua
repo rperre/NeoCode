@@ -304,12 +304,12 @@ return {
                     offset_separator = { bg = "None", italic = false, bold = true },
                 },
                 options = {
-                    --     indicator_icon = ' ',
-                    --     separator_style = { '', '' },
+                    indicator_icon = ' ',
+                    separator_style = { '', '' },
                     --     tab_size = 0,
-                    --     buffer_close_icon = '',
-                    --     modified_icon = '',
-                    --     close_icon = '',
+                    buffer_close_icon = '',
+                    modified_icon = '',
+                    close_icon = '',
                     --
                 },
             })
