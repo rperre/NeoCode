@@ -23,14 +23,24 @@ return {
             })
 
             vim.lsp.config("solargraph", {
-                -- formatter = "rubocop",
-                -- linters = "rubocop --lsp",
+                formatter = "rubocop",
+                linters = "rubocop --lsp",
+                -- cmd = { 'solargraph', 'stdio' },
                 diagnostics = true,
-                completion = true
+                completion = true,
+                -- transport = "socket",
+                -- autoformat = true,
+                -- definitions = true,
+                -- folding = true,
+                -- formatting = true,
+                hover = true,
+                references = true,
+                rename = true,
+                symbols = true,
             })
 
-            vim.lsp.enable('solargraph')
-            -- vim.lsp.enable('ruby_lsp')
+            -- vim.lsp.enable('solargraph')
+            vim.lsp.enable('ruby_lsp')
             vim.lsp.enable('lua-language-server')
         end,
     },
