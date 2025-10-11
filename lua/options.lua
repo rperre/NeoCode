@@ -1,3 +1,6 @@
+-- Hide cmdline bar
+vim.o.cmdheight = 0
+
 -- Terminal interaction
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
