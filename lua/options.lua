@@ -1,5 +1,3 @@
-vim.cmd.colorscheme "NeoCode"
-
 -- Terminal interaction
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
@@ -7,6 +5,7 @@ vim.opt.mouse = 'a'               -- allow the mouse to be used in nvim
 
 -- [ UI config ]
 -- Spacing
+vim.cmd.colorscheme "NeoCode2"
 vim.opt.tabstop = 4      -- number of visual spaces per TAB
 vim.opt.softtabstop = 4  -- number of spaces in tab when editing
 vim.opt.shiftwidth = 4   -- insert 4 spaces on a tab
@@ -50,7 +49,7 @@ local function au(typ, pattern, cmdOrFn)
 end
 
 vim.diagnostic.open_float(nil, {
-    scope = "line",  -- Show diagnostics for the current line
+    scope = "line",     -- Show diagnostics for the current line
     border = "rounded", -- Add a rounded border to the floating window
 })
 

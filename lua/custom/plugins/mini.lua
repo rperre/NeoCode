@@ -17,7 +17,7 @@ return {
             require('mini.tabline').setup()
 
             require('mini.hues').setup({ background = '#000000', foreground = '#cdc4c6' })
-            -- require('mini.colors').get_colorscheme():add_transparency():write({ name = 'NeoCode' })
+            -- require('mini.colors').get_colorscheme():add_transparency():write({ name = 'NeoCode2' })
         end,
     },
 }
