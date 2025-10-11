@@ -1,10 +1,7 @@
---- @type LazyPluginSpec
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "AndreM222/copilot-lualine",
-        "letieu/harpoon-lualine",
         "pnx/lualine-lsp-status",
     },
     config = function()
@@ -159,27 +156,12 @@ return {
 
         local mode = {
             "mode",
-            separator = { left = "", right = "" },
             right_padding = 2,
-            color = function()
-                return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
-            end,
         }
         local filename = {
             "filename",
             color = { fg = colors.magenta, bg = "None", gui = "bold" },
             cond = conditions.alpha,
-        }
-        local alpha = {
-            function()
-                return "Alpha Dashboard"
-            end,
-            color = { fg = colors.magenta, bg = "None", gui = "bold" },
-            cond = function()
-                if vim.bo.filetype == "alpha" then
-                    return true
-                end
-            end,
         }
         local branch = {
             "branch",
@@ -210,36 +192,6 @@ return {
         }
         local macro_recording = {
             show_macro_recording,
-            color = { fg = "#333333", bg = "#ff6666" },
-            separator = { left = "", right = "" },
-        }
-        local harpoon = {
-            "harpoon2",
-            icon = "󰀱",
-            indicators = { "1", "2", "3", "4" },
-            active_indicators = { "[1]", "[2]", "[3]", "[4]" },
-            _separator = " ",
-            separator = { left = "", right = "" },
-            color = function()
-                return { bg = mode_color[vim.fn.mode()], fg = colors.bg, gui = "bold" }
-            end,
-        }
-        local copilot = {
-            "copilot",
-            symbols = {
-                status = {
-                    hl = {
-                        enabled = colors.green,
-                        sleep = colors.yellow,
-                        disabled = colors.bg,
-                        warning = colors.orange,
-                        unknown = colors.red,
-                    },
-                },
-            },
-            show_colors = true,
-            color = { bg = "None", gui = "bold" },
-            cond = conditions.alpha,
         }
         local diff = {
             "diff",
@@ -300,11 +252,7 @@ return {
         }
         local location = {
             "location",
-            separator = { left = "", right = "" },
             left_padding = 2,
-            color = function()
-                return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
-            end,
         }
         local sep = {
             "%=",
@@ -320,19 +268,19 @@ return {
             },
             sections = {
                 lualine_a = { mode },
-                lualine_b = { filename, alpha, branch, lsp_status },
-                lualine_c = { diagnostics, sep, macro_recording, harpoon },
-                lualine_x = { copilot, diff, fileformat, lazy, mason },
+                lualine_b = { filename, lsp_status },
+                lualine_c = { diagnostics, sep, macro_recording, },
+                lualine_x = { diff, fileformat, lazy, mason },
                 lualine_y = { buffers, filetype, progress },
                 lualine_z = { location },
             },
             inactive_sections = {
-                lualine_a = { filename },
+                lualine_a = {},
                 lualine_b = {},
                 lualine_c = {},
                 lualine_x = {},
                 lualine_y = {},
-                lualine_z = { location },
+                lualine_z = {},
             },
             tabline = {},
             extensions = {},
@@ -355,7 +303,6 @@ return {
                     end)
                 )
             end,
-            asd
         })
     end,
 }
