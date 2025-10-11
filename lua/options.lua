@@ -33,10 +33,10 @@ vim.diagnostic.config({
         prefix = '●', -- Customize prefix symbol
         spacing = 2, -- Adjust spacing between text and diagnostic
     },
-    signs = true, -- Show signs in the gutter
+    signs = false, -- Show signs in the gutter
     underline = true, -- Underline the error text
     update_in_insert = false, -- Update diagnostics only on leaving insert mode
-    severity_sort = true, -- Sort diagnostics by severity
+    severity_sort = true, -- Sort adiagnostics by severity
 })
 
 
@@ -55,19 +55,24 @@ vim.diagnostic.open_float(nil, {
     border = "rounded", -- Add a rounded border to the floating window
 })
 
--- au({ 'CursorHold', 'InsertLeave' }, nil, function()
---     local opts = {
---         focusable = false,
---         scope = 'cursor',
---         close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter' },
---     }
---     vim.diagnostic.open_float(nil, opts)
--- end)
---
--- au('InsertEnter', nil, function()
---     vim.diagnostic.enable(false)
--- end)
---
--- au('InsertLeave', nil, function()
---     vim.diagnostic.enable(true)
--- end)
+au({ 'CursorHold', 'InsertLeave' }, nil, function()
+    local opts = {
+        focusable = false,
+        scope = 'cursor',
+        close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter' },
+    }
+    vim.diagnostic.open_float(nil, opts)
+end)
+
+au('InsertEnter', nil, function()
+    vim.diagnostic.enable(false)
+end)
+
+au('InsertLeave', nil, function()
+    vim.diagnostic.enable(true)
+end)
+
+local on_attach = function(args)
+    vim.bo[args.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
+end
+vim.api.nvim_create_autocmd('LspAttach', { callback = on_attach })

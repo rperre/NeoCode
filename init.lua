@@ -29,3 +29,5 @@ require("transparent").setup({
 
 
 -- require('transparent').clear_prefix('BufferLine')
+
+require('mini.completion').setup({})

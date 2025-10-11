@@ -89,7 +89,7 @@ require("which-key").add({
     -- Open NeoTree
     {
         "<leader>e",
-        "<cmd>Neotree float<CR>",
+        "<cmd>lua MiniFiles.open()<CR>",
         desc = "File Explorer",
         mode = "n",
         noremap = true,
