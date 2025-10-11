@@ -31,11 +31,11 @@ vim.opt.showmode = true       -- we are experienced, wo don't need the "-- INSER
 
 vim.diagnostic.config({
     virtual_text = {
-        prefix = '●', -- Customize prefix symbol
-        spacing = 2, -- Adjust spacing between text and diagnostic
+        prefix = ' ',
+        spacing = 10,
     },
-    signs = false, -- Show signs in the gutter
-    underline = true, -- Underline the error text
-    update_in_insert = false, -- Update diagnostics only on leaving insert mode
-    severity_sort = true, -- Sort adiagnostics by severity
+    signs = false,
+    underline = true,
+    update_in_insert = true,
+    severity_sort = true,
 })
