@@ -18,7 +18,7 @@ return {
             require('mini.comment').setup()
             require('mini.keymap').setup()
             require('mini.move').setup()
-
+            require('mini.pick').setup()
 
             require('mini.hues').setup({ background = '#000000', foreground = '#cdc4c6' })
             -- require('mini.colors').get_colorscheme():add_transparency():write({ name = 'NeoCode' })
