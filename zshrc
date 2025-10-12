@@ -15,6 +15,11 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/opt/homebrew/bin"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Setup rbenv
+export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$PATH:$HOME/.rbenv/bin"
+eval "$(rbenv init -)"
+
 # Local binaries PATH
 export PATH="$PATH:/Users/rperre/.local/bin"
 
