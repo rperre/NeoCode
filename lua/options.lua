@@ -8,7 +8,8 @@ vim.opt.mouse = 'a'               -- allow the mouse to be used in nvim
 
 -- [ UI config ]
 -- Spacing
-vim.cmd.colorscheme "NeoCode2"
+-- vim.cmd.colorscheme "gruvbox"
+vim.cmd.colorscheme "NeoCode"
 vim.opt.tabstop = 4      -- number of visual spaces per TAB
 vim.opt.softtabstop = 4  -- number of spaces in tab when editing
 vim.opt.shiftwidth = 4   -- insert 4 spaces on a tab
