@@ -21,7 +21,7 @@ export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
 
 # Local binaries PATH
-export PATH="$PATH:/Users/rperre/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Set up prompt
 export STARSHIP_CONFIG=$HOME/.config/starship.toml
@@ -39,11 +39,11 @@ alias fzf="fzf --style full \
 # Start a TMUX session if we are launching a terinal session outside TMUX
 if [ "$TMUX" = "" ]; then 
     # Source TMUX config
-    $(tmux source-file ~/.tmux.conf)
+    $(tmux source-file $HOME/.tmux.conf)
 
     # Startup a TMUX session
     tmux;
 else
     # MOTD
-    fortune -l -n 200 | echobox -S single
+    fortune -l -n 100 | echobox -S single
 fi
