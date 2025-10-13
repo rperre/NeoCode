@@ -1,18 +1,3 @@
-# Start a TMUX session if we are launching a terinal session outside TMUX
-if [ "$TMUX" = "" ]; then 
-    # Source TMUX config
-    $(tmux source-file $HOME/.tmux.conf)
-
-    # Startup a TMUX session
-    tmux;
-
-    # Exit when TMUX session quits
-    exit;
-else
-    # MOTD
-    fortune -s | cowsay -f sus
-fi
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -50,3 +35,18 @@ source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--layout reverse --border top'
 alias fzf="fzf --style full \
     --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
+
+# Start a TMUX session if we are launching a terinal session outside TMUX
+if [ "$TMUX" = "" ]; then 
+    # Source TMUX config
+    $(tmux source-file $HOME/.tmux.conf)
+
+    # Startup a TMUX session
+    tmux;
+
+    # Exit when TMUX session quits
+    #exit;
+else
+    # MOTD
+    fortune -s | cowsay -f sus
+fi
