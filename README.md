@@ -24,5 +24,5 @@ We should have a visual tool for this, and facilitate as much as possible using 
 ## Ideas for features
 - Having custom menus for the language being used, with all the QOL possible out of the box:
     - Compiling and running
-    - Running tests with visual intection
+    - Running tests with visual TUI interaction
     - DAP interface
