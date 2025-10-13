@@ -18,11 +18,10 @@ interact direcly with the buffer. LazyGit and NeoGit should be available within
 the same context in the keymap as much as possible.
 
 ### Find and replace tool
-We should have a visual tool for this, and facilitate as much as possible
-using :s/ + quickfix as much as possiblel
+We should have a visual tool for this, and facilitate as much as possible using :s/ + quickfix
 
 ## Ideas for features
 - Having custom menus for the language being used, with all the QOL possible out of the box:
-- - Compiling and running
-- - Running tests with visual intection
-- - DAP interface
+    - Compiling and running
+    - Running tests with visual intection
+    - DAP interface
