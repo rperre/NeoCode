@@ -10,7 +10,7 @@ if [ "$TMUX" = "" ]; then
     exit;
 else
     # MOTD
-    fortune -l -n 100 | echobox -S single
+    fortune -s | cowsay -f sus
 fi
 
 # Preferred editor for local and remote sessions
