@@ -2,6 +2,7 @@
 A *very* opinionated NeoVim distribution.
 Includes tmux, zsh and kitty setups for a complete integrated development environment.
 
+![Alpha](https://raw.githubusercontent.com/rperre/NeoCode/refs/heads/main/assets/screenshots/furst.png)
 ## TODO: Keymaps
 Define keymaps for all the commands already defined
 
