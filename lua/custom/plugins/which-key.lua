@@ -6,12 +6,6 @@ return {
         opts = {
             preset = "helix",
             defaults = {},
-            spec = {
-                {
-                    mode = { "n", "v" },
-                    { "<leader>c", group = "Code" },
-                },
-            },
         },
         config = function(_, opts)
             local wk = require("which-key")
