@@ -40,3 +40,47 @@ vim.diagnostic.config({
     update_in_insert = true,
     severity_sort = true,
 })
+
+-- local function dashboard_if_only_empty_buffer()
+-- end
+--
+-- mine | au! BufRead | augroup END
+
+local function no_buffers_worth_saving()
+    for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_get_option(bufnr, 'buflisted') and not vim.api.nvim_buf_get_option(bufnr, 'readonly') then -- disregard unlisted buffers
+            if vim.api.nvim_buf_get_name(bufnr) ~= '' then
+                return false                                                                                           -- there is a buffer with a name
+            end
+            local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+            if #lines > 1 or (#lines == 1 and #lines[1] > 0) then
+                return false -- there is a buffer with content
+            end
+        end
+    end
+    return true -- there are no listed, writable, named, nonempty buffers
+end
+
+local function open_dashboard_on_empty()
+    -- local Snacks = require("snacks")
+    -- Snacks.dashboard.open()
+    -- vim.notify("BUFF ENTER")
+    -- print(vim.api.nvim_list_bufs())
+    local buf_list = vim.api.nvim_list_bufs()
+    local pr = ""
+    if no_buffers_worth_saving() then
+        vim.notify("Should open dashboard")
+    end
+end
+
+vim.api.nvim_create_autocmd("BufDelete", {
+    group = vim.api.nvim_create_augroup("buf", { clear = true }),
+    -- buffer = args.buf,
+    callback = open_dashboard_on_empty,
+})
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--     group = vim.api.nvim_create_augroup("buf", { clear = true }),
+--     -- buffer = args.buf,
+--     callback = open_dashboard_on_empty,
+-- })
