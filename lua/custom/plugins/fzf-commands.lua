@@ -1,3 +1,1 @@
-return {
-    { 'vijaymarupudi/nvim-fzf-commands' },
-}
+return { 'vijaymarupudi/nvim-fzf-commands' }
