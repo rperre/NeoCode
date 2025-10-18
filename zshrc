@@ -36,6 +36,9 @@ export FZF_DEFAULT_OPTS='--layout reverse --border top'
 alias fzf="fzf --style full \
     --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 
+alias less="bat"
+alias more="bat"
+
 # Start a TMUX session if we are launching a terinal session outside TMUX
 if [ "$TMUX" = "" ]; then 
     # Source TMUX config
