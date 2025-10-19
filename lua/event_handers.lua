@@ -1,1 +1,1 @@
-require "scripts.buffer.event_bufdelete"
+-- require "scripts.buffer.event_bufdelete"
