@@ -1,11 +1,6 @@
 return {
-  {
-    'folke/tokyonight.nvim',
-  },
-  {
-    'catppuccin/nvim',
-
-  },
+  { 'folke/tokyonight.nvim' },
+  { 'catppuccin/nvim' },
   { 'ellisonleao/gruvbox.nvim' },
   { 'rebelot/kanagawa.nvim' },
   { 'catppuccin/nvim' },
