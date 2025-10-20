@@ -7,6 +7,22 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
+# Context Menus
+set -g @plugin 'jaclu/tmux-menus'
+set -g @menus_trigger '§'
+set -g @menus_config_file "~/.configs/tmux/tmux.conf.local"
+set -g @menus_location_x 'W'
+set -g @menus_location_y 'S'
+set -g @menus_show_key_hints 'Yes'
+
+set -g @menus_format_title "'#[align=left] #[fg=colour34]Neo: #{@menu_name} '"
+set -g @menus_simple_style_selected 'fg=#414559,bg=#e5c890'
+set -g @menus_simple_style 'bg=#414559'        # @thm_surface_0
+set -g @menus_simple_style_border 'bg=#414559' # @thm_surface_0
+set -g @menus_nav_next '#[fg=colour220]-->'
+set -g @menus_nav_prev '#[fg=colour71]<--'
+set -g @menus_nav_home '#[fg=colour84]<=='
+
 # -- bindings ------------------------------------------------------------------
 
 # preserve tmux stock bindings,
