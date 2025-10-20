@@ -1,1 +1,2 @@
+-- Disabled because it's very buggy
 -- require "scripts.buffer.event_bufdelete"
