@@ -37,7 +37,7 @@ return {
       vim.lsp.config("solargraph", {
         formatter = "rubocop",
         linters = "rubocop --lsp",
-        cmd = { 'solargraph', 'stdio' },
+        cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
         diagnostics = true,
         completion = true,
         -- transport = "socket",
