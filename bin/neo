@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# Checks if there is a tmux server running
+if [ "$TMUX" = "" ]; then
+  # If there is NOT a tmux server running:
+  # 1 - Try to create a session named "Neo" with the this binary as its program
+  tmux new-session -s Neo -d 'neo $1' && tmux rename-window -t Neo:1 "Project Window"; 
+  # 2 - Attach to a session called "Neo"
+  tmux attach -t Neo
+else
+  # If there IS a tmux server running execute the editor
+  $EDITOR $1
+fi
