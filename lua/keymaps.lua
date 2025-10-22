@@ -27,6 +27,15 @@ notify_many_keys("j")
 notify_many_keys("k")
 notify_many_keys("l")
 
+-- local keymap = vim.keymap
+--
+-- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>",
+--     { desc = "Fuzz find files in cwd" })
+-- keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+-- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+-- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>",
+--     { desc = "Find string under cursor in cwd" })
+
 require("which-key").add({
   {
     "<down>",
@@ -163,3 +172,4 @@ require("which-key").add({
 require "keymaps.buffer"
 require "keymaps.code"
 require "keymaps.find"
+require "keymaps.window"
