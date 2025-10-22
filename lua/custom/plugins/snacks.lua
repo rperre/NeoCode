@@ -5,18 +5,15 @@ return {
   opts = {
     bigfile = { enabled = true },
     dashboard = {
+      enabled = false,
       formats = {
         key = function(item)
           return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
         end,
       },
       sections = {
-        -- { title = "Recent",         padding = 1 },
-        -- { section = "recent_files", padding = 1 },
-        -- { title = "Sessions",       padding = 1 },
         { title = "Projects",   padding = 1 },
         { section = "projects", padding = 1 },
-        -- { section = "keys",     padding = 1 },
       },
     },
     explorer = { enabled = true },
